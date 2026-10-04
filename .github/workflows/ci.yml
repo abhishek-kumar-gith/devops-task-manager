@@ -16,31 +16,34 @@ name: CI
 
      steps:
        - name: Checkout code
-         uses: action/checkout@v4
+         uses: actions/checkout@v4
 
-
+      
+       - name: Setup Node.js
+         uses: actions/setup-node@v4 
          with:
+
            node-version: 24
 
 
 
 
-     - name: Install backend dependencies
-       run: npm ci
+      - name: Install backend dependencies
+        run: npm ci
 
-       working-directory: backend 
-
-
-
-    - name: Install frontend dependencies
-      run: npm ci
-      working-directory: frontend
+        working-directory: backend 
 
 
 
-    - name: Buid frontend 
-      run: npm run build 
-      working-directory: frontend 
+      - name: Install frontend dependencies
+        run: npm ci
+        working-directory: frontend
+
+
+
+      - name: Buid frontend 
+        run: npm run build 
+        working-directory: frontend 
 
 
 
