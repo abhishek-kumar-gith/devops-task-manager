@@ -1,0 +1,46 @@
+name: CI
+
+
+  on:
+    push:
+      branches:
+        - main
+
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+
+
+
+
+     steps:
+       - name: Checkout code
+         uses: action/checkout@v4
+
+
+         with:
+           node-version: 24
+
+
+
+
+     - name: Install backend dependencies
+       run: npm ci
+
+       working-directory: backend 
+
+
+
+    - name: Install frontend dependencies
+      run: npm ci
+      working-directory: frontend
+
+
+
+    - name: Buid frontend 
+      run: npm run build 
+      working-directory: frontend 
+
+
+
