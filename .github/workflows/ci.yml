@@ -1,15 +1,15 @@
-name: CI
+ name: CI
 
 
-  on:
-    push:
-      branches:
+ on:
+   push:
+     branches:
         - main
 
 
-  jobs:
-    build:
-      runs-on: ubuntu-latest
+ jobs:
+   build:
+     runs-on: ubuntu-latest
 
 
 
