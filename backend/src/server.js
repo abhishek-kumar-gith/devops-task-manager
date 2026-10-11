@@ -14,7 +14,7 @@ app.use('/api/tasks', taskRoutes);
 
 app.get('/', (req, res) => {
   res.json({
-    message: 'DevOps Task Manager API is running'
+    message: 'DevOps CI/CD deployment verified'
   });
 });
 
